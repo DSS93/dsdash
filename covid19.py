@@ -10,7 +10,7 @@ url = 'https://api.rootnet.in/covid19-in/stats/latest'
 response = requests.get(url).json()
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = 'DS Dashboard'
 server = app.server
 
@@ -195,4 +195,4 @@ def update_graph(my_dropDown):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
