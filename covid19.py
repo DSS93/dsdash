@@ -94,7 +94,7 @@ labels = ['Total', 'Death', 'Recovered']
 values = [pie_county_total(),  pie_county_death(), pie_county_recovered()]
 colors = ['#3498DB', '#E74C3C', '#2ECC71']
 fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
-fig.update_traces(hoverinfo='label+percent', textfont_size=15, marker=dict(colors=colors))
+fig.update_traces(hoverinfo='label+percent',textinfo='value', textfont_size=15, marker=dict(colors=colors))
 fig.update_layout(title='Country Data')
 
 
@@ -189,7 +189,7 @@ app.layout = html.Div(children=[
 def update_graph(my_dropDown):
     values1 = [pie_all_state_case(my_dropDown), pie_all_state_death(my_dropDown), pie_all_state_recovered(my_dropDown)]
     fig_state = go.Figure(data=[go.Pie(labels=labels, values=values1)])
-    fig_state.update_traces(hoverinfo='label+percent', textfont_size=15, marker=dict(colors=colors))
+    fig_state.update_traces(hoverinfo='label+value', textfont_size=15, marker=dict(colors=colors))
     fig_state.update_layout(title='State Wise Data')
     return fig_state
 
